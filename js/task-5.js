@@ -4,12 +4,19 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const button = document.querySelector(".change-color");
-const colorSpan = document.querySelector(".color");
-const body = document.body;
+const widget = document.querySelector(".widget");
+widget.style.backgroundColor = "#fafafa";
+const btnChangeColor = document.querySelector(".change-color");
+const spanColor = document.querySelector(".color");
+const body = document.querySelector("body");
+const changeColor = () => {
+  const currentColor = getRandomHexColor();
+  spanColor.style.color = currentColor;
+  body.style.backgroundColor = currentColor;
+}
+btnChangeColor.addEventListener("click", changeColor);
 
-button.addEventListener("click", () => {
-  const randomColor = getRandomHexColor();
-  body.style.backgroundColor = randomColor;
-  colorSpan.textContent = randomColor;
-});
+const head = document.querySelector("head");
+const monseratFontLinks = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>;`
+
+head.insertAdjacentHTML("beforeEnd", monseratFontLinks);
