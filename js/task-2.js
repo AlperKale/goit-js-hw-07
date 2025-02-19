@@ -37,4 +37,4 @@ images.forEach(img => {
   li.append(image);
 });
 
-console.log(galery
+console.log(galery);
